@@ -99,13 +99,14 @@ function ak(x,y,s, mode, barrelL,c1,c2,c3){
     rect(x-3.6*s, y -0.1*s, 0.1*s, 0.2*s, mode)
     //magazine
     ctx.beginPath()
-    ctx.arc(x-2.5*s, y + 0.3*s,0.8*s,0,0.3*Math.PI)
-    ctx.stroke()
-    ctx.beginPath(0)
     ctx.arc(x-2.5*s, y + 0.3*s,0.5*s,0,0.4*Math.PI)
-    ctx.moveTo(x-2.5*s + 0.5*s*Math.cos(0.4*Math.PI), y+0.3*s +0.5*s*Math.sin(0.4*Math.PI))
     ctx.lineTo(x-2.5*s + 0.8*s*Math.cos(0.3*Math.PI), y+0.3*s+0.8*s*Math.sin(0.3*Math.PI))
-    ctx.stroke()
+    ctx.arc(x-2.5*s, y + 0.3*s,0.8*s,0.3*Math.PI,0, true)
+    if (mode == "fill") {
+        ctx.fill()
+    } else {
+        ctx.stroke()
+    }
     //trigger
     rect(x-1.7*s, y +0.3*s, 0.3*s, 0.2*s)
     //handle
